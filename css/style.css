@@ -1,0 +1,110 @@
+html{
+	height:100%;
+	background-color: #f0f0f0;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23e8e8e8' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+#loginBox{
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:400px;
+	margin:-280px 0px 0px -200px;
+	background-color:transparent;
+}
+
+#loginHeader{
+	background-color:transparent;
+	color:#495468;
+	text-align:center;
+	padding-top:20px;
+	border-radius:5px 5px 0px 0px;
+}
+
+#loginTitle{
+	text-transform:uppercase;
+	background:#fff;
+	height:40px;
+	line-height:40px;
+	font-size:16px;
+	text-align:center;
+}
+
+div#logo{
+	width:175px;
+	height:175px;
+	margin:0px auto;
+	background-image:url("/images/Elogo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*
+#logo{
+	-webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+*/
+
+.accountForm{
+	margin-top:20px;
+	padding:20px;
+	background:#fff;
+	border:1px solid #ccc;
+	border-radius:5px;
+	-webkit-box-shadow: 0px 1px 53px -3px rgba(173,173,173,0.5);
+	-moz-box-shadow: 0px 1px 53px -3px rgba(173,173,173,0.5);
+	box-shadow: 0px 1px 53px -3px rgba(173,173,173,0.5);
+}
+
+input[type="email"], input[type="password"]{
+	/*border:0px;*/
+	/*padding:15px 10px;*/
+}
+
+div.inputRow{
+	/*border-bottom:1px solid;*/
+	width:95%;
+	margin:20px auto;
+}
+
+div.buttonRow{
+	padding:10px 10px;
+	/*text-align:right;*/
+}
+
+.btn-green{
+		color: #fff;
+		background-color: #0BAC6A;
+		border-color: #098C56;
+}
+
+.btn-green:hover, 
+.btn-green:focus, 
+.btn-green:active, 
+.btn-green.active,
+.btn-green:active:focus{
+	color:#fff;
+	background-color: #098C56;
+	border-color: #098C56;
+}
+
+.conditionalSubmit{
+	background-color:#C1C1C1;
+	border:1px solid #c1c1c1;
+	cursor:not-allowed;
+}
+
+
+.passwordRequirements{
+	display:none;
+}
+
+a{
+	color:#098C56;
+}
+a:hover{
+	color:#0BAC6A;
+	text-decoration:none;
+}
