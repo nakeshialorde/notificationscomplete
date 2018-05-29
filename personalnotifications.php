@@ -1,4 +1,4 @@
-<?php/*
+<?php
 include "partials/header.php";//include header file containing stylesheets js and fonts
 include 'Timer.php';
 
@@ -59,7 +59,7 @@ include 'Timer.php';
           $message = $jsonPostResult->message;
          // $message = "The was an error processing this payment";
        }
-    }*/
+    }
 ?>
 
 <!doctype html>
@@ -161,7 +161,7 @@ src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
 </div>
 <div id="message"></div>
 
-  <h2><center><b>C.O.B Notification </b></center></h2>
+  <h2><center><b>Personal Notification </b></center></h2>
   <p><center><?php echo $_POST["notification_id"]; ?><br /> &ensp;&ensp;<p id="demo"></p>
    <script>
    var d = new Date();
@@ -170,7 +170,7 @@ src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
 
    <form id="generalnotifications" action="generalnotifications.php" method="POST">
 
-      <input type="hidden" name="notification_id" value="<?php echo $_POST["notification_id"]; ?>" />
+       <input type="hidden" name="notification_id" value="<?php echo $_POST["notification_id"]; ?>" />
        <input type="hidden" name="user_id" value="<?php echo $_POST["user_id"]; ?>" />
        <input type="hidden" name="email" value="<?php echo $_POST["email"]; ?>" />
        <input type="hidden" name="subject" value="<?php echo $_POST["subject"]; ?>" />

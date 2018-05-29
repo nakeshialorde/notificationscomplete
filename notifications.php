@@ -18,7 +18,19 @@
 	<!-- END UI UPDATE STYLES -->
 <link href="https://unpkg.com/ionicons@4.0.0/dist/css/ionicons.min.css"rel="stylesheet"/>
 
-<link rel="stylesheet" id="coToolbarStyle" href="chrome-extension://cjabmdjcfcfdmffimndhafhblfmpjdpe/toolbar/styles/placeholder.css" type="text/css"><script type="text/javascript" id="cosymantecbfw_removeToolbar">(function () {				var toolbarElement = {},					parent = {},					interval = 0,					retryCount = 0,					isRemoved = false;				if (window.location.protocol === 'file:') {					interval = window.setInterval(function () {						toolbarElement = document.getElementById('coFrameDiv');						if (toolbarElement) {							parent = toolbarElement.parentNode;							if (parent) {								parent.removeChild(toolbarElement);								isRemoved = true;								if (document.body && document.body.style) {									document.body.style.setProperty('margin-top', '0px', 'important');								}							}						}						retryCount += 1;						if (retryCount > 10 || isRemoved) {							window.clearInterval(interval);						}					}, 10);				}			})();</script>
+<link rel="stylesheet" id="coToolbarStyle" href="chrome-extension://cjabmdjcfcfdmffimndhafhblfmpjdpe/toolbar/styles/placeholder.css" type="text/css">
+<script type="text/javascript" id="cosymantecbfw_removeToolbar">(function () {				var toolbarElement = {},					parent = {},					interval = 0,					retryCount = 0,					isRemoved = false;				if (window.location.protocol === 'file:') {					interval = window.setInterval(function () {						toolbarElement = document.getElementById('coFrameDiv');						if (toolbarElement) {							parent = toolbarElement.parentNode;							if (parent) {								parent.removeChild(toolbarElement);								isRemoved = true;								if (document.body && document.body.style) {									document.body.style.setProperty('margin-top', '0px', 'important');								}							}						}						retryCount += 1;						if (retryCount > 10 || isRemoved) {							window.clearInterval(interval);						}					}, 10);				}			})();
+</script>
+
+<!--Notification plugin start-->
+<link rel="stylesheet" href="css/message.css">
+<script src="js/message.js"></script>
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+	crossorigin="anonymous">
+</script>
+<!--Notification plugin end-->
 
 <style>
 .navbar-nav mr-auto
@@ -26,9 +38,8 @@
   list-style: none;
 }
 </style>
-
-
 </head>
+
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
@@ -42,7 +53,7 @@
 							<li><a href="home.php"><i class="fa fa-home"></i></a></li>
           		<li><a><i class="fa fa-bars" id="toggle-menu"></i></a></li>
 							<li><a><i class="fa fa-bars" id="toggle-menu"></i></a></li>
-
+							<div id="message"></div>
 
 		</ul>
 	</div>
@@ -63,6 +74,69 @@
 	            <li><a href="javascript:location.reload()"><i class="fa fa-refresh theme-color-two"></i></a></li>
 	            <li><a href="home.php"><i class="fa fa-home"></i></a></li>
 				<li><a href="#"><i class="fa fa-bars" id="toggle-menu"></i></a></li>
+
+
+<!--NOTIFICATION PLUGIN BEGIN-->
+<script>
+MessagePlugin.init({
+  elem: "#message",
+  msgData: [
+    {text: "New Message", id: 1, readStatus: 1},
+    {text: "New Request", id: 2, readStatus: 1},
+    {text: "New Message", id: 3, readStatus: 0},
+    {text: "New Message", id: 4, readStatus: 0},
+    {text: "New Message", id: 5, readStatus: 0},
+    {text: "New Message", id: 6, readStatus: 0}],
+    getNodeHtml: function(obj, node) { // custom html
+      if (obj.readStatus == 1) {
+          node.isRead = true;
+      } else {
+          node.isRead = false;
+      }
+      var html = "<p>"+ obj.text +"</p>";
+      node.html = html;
+      return node;
+    }
+});
+
+MessagePlugin.init({
+  // title
+  title: "<a href="https://www.jqueryscript.net/tags.php?/Notification/">Notifications</a>",
+
+  // width/height
+  width: 250,
+  height: 350,
+
+  // message data
+  msgData: [],
+
+  // notice data
+  noticeData: [],
+
+  // the amount of unread messages
+  msgUnReadData: 0,
+
+  // the amount of unread notifications
+  noticeUnReadData: 0,
+
+  // the amount of messages to display
+  msgShow: 5,
+
+  // the amount of notifications to display
+  noticeShow: 5
+
+});
+
+MessagePlugin.init({
+  allRead: null
+});
+
+MessagePlugin.init({
+  msgClick: null,
+  noticeClick: null
+});
+</script>
+<!--NOTIFICATION PLUGIN END-->
 
 				<!-- NOTIFICATIONS -->
 						<ul class="nav navbar-nav navbar-right">

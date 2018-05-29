@@ -8,7 +8,7 @@ if(!isset($_SESSION["token"])){
 <!--<script src="js/app.js"></script>-->
 <script>
     var token = "2324"; //$_SESSION["token"];
-    var messageId = getQueryStringValue("message_id");
+    var messageId = getQueryStringValue("notification_id");
     console.log(messageId);
 
     /*var source = {
